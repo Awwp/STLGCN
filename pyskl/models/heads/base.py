@@ -10,7 +10,7 @@ from ..builder import build_loss
 
 import sys
 import os
-# 将项目根目录加入Python搜索路径
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 from pyskl.utils.graph import Graph
 
@@ -90,9 +90,9 @@ class BaseHead(nn.Module, metaclass=ABCMeta):
         A = torch.tensor(A, dtype=torch.float32)
         neighbors = [torch.where(A[v] == 1)[0] for v in range(25)]
 
-        proto = torch.randn(25, 3, 256)  # 随机初始化
+        proto = torch.randn(25, 3, 256)  
         proto = F.normalize(_trunc_normal_(proto, mean=0., std=0.02, a=-2., b=2.), dim=2)
-        #
+        
         for m in range(3):
             for v in range(25):
                 if len(neighbors[v]) > 0:
