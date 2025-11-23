@@ -1,11 +1,11 @@
 modality = 'jm'
 graph = 'nturgb+d'
-work_dir = f'./work_dirs/lpmdgcn/ntu120_xsub_3dkp/jm'
+work_dir = f'./work_dirs/stlgcn/ntu120_xsub_3dkp/jm'
 
 model = dict(
     type='RecognizerGCN',
     backbone=dict(
-        type='LPMDGCN',
+        type='STLGCN',
         gcn_ratio=0.125,
         gcn_ctr='T',
         gcn_ada='T',
