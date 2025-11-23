@@ -63,7 +63,7 @@ class stlgcn(nn.Module):
             x8 = self.x8(x_8)
 
             full_result = torch.zeros(n, self.out_channels, t, v).to(device)
-           # 将每个拆分结果按索引拼接到完整骨架的正确位置
+
             full_result[:, :, :, self.split_1] = x5
             full_result[:, :, :, self.split_2] = x12
             full_result[:, :, :, self.split_3] = x8
